@@ -290,9 +290,12 @@
           </td>
           </tr>
 
-          <a href="http://localhost:8081/?id={{.Id}}">
+          <a id=replaceImage1>
                <input type="button" style="font-size:larger;" value="Replace image" />
           </a>
+          <script>
+            document.getElementById("replaceImage1").href = window.location.protocol + "//" + window.location.hostname + ":8081/?id={{.Id}}";
+          </script>
           <tr><td align="right"><label>Drawer/Bin</label></td>
             <td>space needed: <input type="radio" name="drawersize" value="0" id="d0" {{if eq .Drawersize 0}}checked{{end}}><label for="d0">regular</label>
               <input type="radio" name="drawersize" value="1" id="d1" {{if eq .Drawersize 1}}checked{{end}}><label for="d1">medium</label>
@@ -314,9 +317,12 @@
       <td style="vertical-align:top;" align="left" width="400">
         <!-- fixed size to help browser layout. TODO: this happens to be the
              image size we use right   now, but that needs to be adapted of course -->
-        <a href="http://localhost:8081/?id={{.Id}}">
+        <a id=replaceImage2>
           <img id="component-image" src="{{.ImageUrl}}" alt="Component image"/>
         </a>
+        <script>
+          document.getElementById("replaceImage2").href = window.location.protocol + "//" + window.location.hostname + ":8081/?id={{.Id}}";
+        </script>
         <div class="msgbox">{{.Msg}}</div>
 
         <!-- Status around -->
