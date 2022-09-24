@@ -290,6 +290,9 @@
           </td>
           </tr>
 
+          <a href="http://localhost:8081/?id={{.Id}}">
+               <input type="button" style="font-size:larger;" value="Replace image" />
+          </a>
           <tr><td align="right"><label>Drawer/Bin</label></td>
             <td>space needed: <input type="radio" name="drawersize" value="0" id="d0" {{if eq .Drawersize 0}}checked{{end}}><label for="d0">regular</label>
               <input type="radio" name="drawersize" value="1" id="d1" {{if eq .Drawersize 1}}checked{{end}}><label for="d1">medium</label>
@@ -311,7 +314,9 @@
       <td style="vertical-align:top;" align="left" width="400">
         <!-- fixed size to help browser layout. TODO: this happens to be the
              image size we use right   now, but that needs to be adapted of course -->
-        <img id="component-image" src="{{.ImageUrl}}" alt="Component image"/>
+        <a href="http://localhost:8081/?id={{.Id}}">
+          <img id="component-image" src="{{.ImageUrl}}" alt="Component image"/>
+        </a>
         <div class="msgbox">{{.Msg}}</div>
 
         <!-- Status around -->
