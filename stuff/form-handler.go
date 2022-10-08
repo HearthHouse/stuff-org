@@ -22,15 +22,13 @@ const (
 
 // Some useful pre-defined set of categories
 var available_category []string = []string{
-	"Resistor", "Potentiometer", "R-Network",
-	"Capacitor (C)", "Aluminum Cap", "Inductor (L)",
-	"Diode (D)", "Power Diode", "LED",
-	"Transistor", "Mosfet", "IGBT",
-	"Integrated Circuit (IC)", "IC Analog", "IC Digital",
-	"Connector", "Socket", "Switch",
-	"Fuse", "Mounting", "Heat Sink",
-	"Microphone", "Transformer", "? MYSTERY",
-}
+	"equipment", "machine", "tool",
+	"large box", "24PK box", "small box",
+	"6 QT Tub", "tin case", "tiny drawer",
+	"plastic case", "wood drawer", "cabinet",
+	"bucket", "milk crate", "shelf",
+	"hanging", "pile", "area",
+	"art", "curio"}
 
 type FormHandler struct {
 	store    StuffStore
@@ -417,7 +415,7 @@ func (h *FormHandler) entryFormHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		http_code = http.StatusNotFound
 		msg = msg + fmt.Sprintf(" (%d: New item)", id)
-		page.PageTitle = "New Item: Noisebridge stuff organization"
+		page.PageTitle = "New Item: hearth stuff organization"
 	}
 
 	page.DescriptionRows = max(3, strings.Count(page.Component.Description, "\n")+1)
